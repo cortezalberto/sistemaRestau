@@ -1,16 +1,14 @@
 package org.example;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-
 import java.time.LocalDate;
 
+@SuperBuilder
 @Getter
 @Setter
-@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-
+@ToString(callSuper = true)
 public class Factura extends Base {
     private LocalDate fechaFacturacion;
     private Integer mpPaymentId;
@@ -20,13 +18,8 @@ public class Factura extends Base {
     private FormaPago formaPago;
     private Double totalVenta;
 
-
     @Override
     public String getInfo() {
-        return "";
+        return "Factura: " + getId() + " - $" + totalVenta + " - " + formaPago;
     }
 }
-
-
-
-

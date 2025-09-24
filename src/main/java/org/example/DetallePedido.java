@@ -8,14 +8,14 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-public class DetallePedido extends Base  {
+@ToString(callSuper = true)
+public class DetallePedido extends Base {
     private Integer cantidad;
     private Double subTotal;
     private Articulo articulo;
 
     @Override
     public String getInfo() {
-        return "";
+        return "DetallePedido: " + cantidad + " x " + (articulo != null ? articulo.getDenominacion() : "N/A");
     }
 }

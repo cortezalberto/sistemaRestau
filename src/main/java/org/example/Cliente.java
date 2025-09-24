@@ -1,20 +1,17 @@
 package org.example;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+@SuperBuilder
 @Getter
 @Setter
-@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-
+@ToString(callSuper = true)
 public class Cliente extends Base {
-    private String nombre;
     private String apellido;
     private String telefono;
     private String email;
@@ -23,40 +20,30 @@ public class Cliente extends Base {
 
     @Builder.Default
     private Set<Pedido> pedidos = new HashSet<>();
+
     @Builder.Default
     private Set<Domicilio> domicilios = new HashSet<>();
+
     private Usuario usuario;
 
-
-
-
-
-
-
-    public void addPedidos(Pedido pedido) {
-        if (pedidos == null) {
-            pedidos = new HashSet<>();
-        }
+    public void addPedido(Pedido pedido) {
         pedidos.add(pedido);
     }
-    public void removePedidos(Pedido pedido) {
+
+    public void removePedido(Pedido pedido) {
         pedidos.remove(pedido);
     }
-    public void addDomicilios(Domicilio domicilio) {
-        if (domicilios == null) {
-           domicilios = new HashSet<>();
-        }
-        domicilios.add(domicilio);
-        }
-        public void removeDomicilios(Domicilio domicilio) {
-        domicilios.remove(domicilio);
-        }
 
+    public void addDomicilio(Domicilio domicilio) {
+        domicilios.add(domicilio);
+    }
+
+    public void removeDomicilio(Domicilio domicilio) {
+        domicilios.remove(domicilio);
+    }
 
     @Override
     public String getInfo() {
-        return "";
+        return "Cliente: " + getNombre() + " " + apellido + " - " + email;
     }
-
-
 }

@@ -1,21 +1,18 @@
 package org.example;
-
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+@SuperBuilder
 @Getter
 @Setter
-@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-
-public class Localidad extends Base{
-    private String nombre;
+@ToString(callSuper = true)
+public class Localidad extends Base {
     private Provincia provincia;
 
     @Override
     public String getInfo() {
-        return "";
+        return "Localidad: " + getNombre() + " - " + (provincia != null ? provincia.getNombre() : "N/A");
     }
 }

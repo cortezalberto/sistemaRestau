@@ -1,5 +1,4 @@
 package org.example;
-
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -17,6 +16,6 @@ public class ArticuloInsumo extends Articulo {
 
     @Override
     public String getInfo() {
-        return "";
+        return "ArticuloInsumo: " + getDenominacion() + " - Stock: " + stockActual;
     }
 }

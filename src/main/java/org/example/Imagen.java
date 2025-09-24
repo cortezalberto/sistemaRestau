@@ -1,19 +1,18 @@
 package org.example;
-
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-@Builder
+@SuperBuilder
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-public class Imagen extends Base  {
+@ToString(callSuper = true)
+public class Imagen extends Base {
     private String denominacion;
 
     @Override
     public String getInfo() {
-        return "";
+        return "Imagen: " + denominacion;
     }
 }
-

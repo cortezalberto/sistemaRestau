@@ -1,18 +1,15 @@
 package org.example;
-
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-
 import java.util.HashSet;
 import java.util.Set;
 
+@SuperBuilder
 @Getter
 @Setter
-@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
-
 public class ArticuloManufacturado extends Articulo {
     private String descripcion;
     private int tiempoEstimadoMinutos;
@@ -31,7 +28,6 @@ public class ArticuloManufacturado extends Articulo {
 
     @Override
     public String getInfo() {
-        return "";
+        return "ArticuloManufacturado: " + getDenominacion() + " - Tiempo: " + tiempoEstimadoMinutos + "min";
     }
 }
-

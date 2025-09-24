@@ -2,15 +2,14 @@ package org.example;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-
 import java.util.HashSet;
 
+@SuperBuilder
 @Getter
 @Setter
-@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@ToString(callSuper = true)
 public abstract class Articulo extends Base {
     private String denominacion;
     private double precioVenta;
@@ -26,5 +25,4 @@ public abstract class Articulo extends Base {
     public void removeImagen(Imagen imagen) {
         imagenes.remove(imagen);
     }
-
 }
