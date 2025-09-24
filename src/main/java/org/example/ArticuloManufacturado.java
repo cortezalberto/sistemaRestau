@@ -1,4 +1,5 @@
 package org.example;
+
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 import java.util.HashSet;
@@ -9,7 +10,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(callSuper = true)
+@ToString(callSuper = true, exclude = {"detallesDeArticulo"}) // EXCLUIR colecciones
 public class ArticuloManufacturado extends Articulo {
     private String descripcion;
     private int tiempoEstimadoMinutos;

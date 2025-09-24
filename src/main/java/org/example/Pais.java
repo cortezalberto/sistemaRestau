@@ -1,12 +1,15 @@
+// ===== 1. CORRECCIÓN: Pais.java =====
 package org.example;
-import  lombok.*;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
+
 @SuperBuilder
-@NoArgsConstructor
+@Getter
+@Setter
+
 @AllArgsConstructor
-
-
-    public class Pais extends Base {
+@ToString(callSuper = true)  // FALTABA: callSuper = true
+public class Pais extends Base {
 
     @Override
     public String getInfo() {

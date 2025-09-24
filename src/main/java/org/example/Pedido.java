@@ -1,4 +1,5 @@
 package org.example;
+
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 import java.time.LocalDate;
@@ -11,7 +12,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(callSuper = true)
+@ToString(callSuper = true, exclude = {"detallePedidos", "sucursal", "domicilio", "factura"}) // EXCLUIR referencias
 public class Pedido extends Base {
     private LocalTime horaEstimadaFinalizacion;
     private Double total;

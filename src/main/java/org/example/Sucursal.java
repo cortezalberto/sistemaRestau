@@ -11,7 +11,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(callSuper = true)
+@ToString(callSuper = true, exclude = {"promociones", "categorias"}) // EXCLUIR colecciones
 public class Sucursal extends Base {
     private LocalTime horarioApertura;
     private LocalTime horarioCierre;

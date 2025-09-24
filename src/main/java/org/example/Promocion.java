@@ -12,7 +12,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(callSuper = true)
+@ToString(callSuper = true, exclude = {"imagenes", "articulos"}) // EXCLUIR colecciones
 public class Promocion extends Base {
     private String denominacion;
     private LocalDate fechaDesde;

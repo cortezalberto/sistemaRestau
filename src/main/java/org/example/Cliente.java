@@ -1,4 +1,7 @@
+
+// ===== CORRECCIÓN 4: Cliente.java =====
 package org.example;
+
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 import java.time.LocalDate;
@@ -10,7 +13,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(callSuper = true)
+@ToString(callSuper = true, exclude = {"pedidos", "domicilios", "usuario"}) // EXCLUIR colecciones y referencias
 public class Cliente extends Base {
     private String apellido;
     private String telefono;
